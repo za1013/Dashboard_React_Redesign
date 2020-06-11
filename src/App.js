@@ -6,7 +6,6 @@ import React, {useState, useEffect} from 'react';
 import componentQueries from 'react-component-queries';
 import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import './styles/reduction.scss';
-import { Provider } from 'react-redux'
 
 import AuthRoute from './utils/AuthRoute'
 import ReportPage from './pages/ReportPage';
@@ -47,7 +46,6 @@ const App = (props) => {
   )
   
   return (
-    <Provider store={props.store}>
       <BrowserRouter basename={getBasename()}>
         <GAListener>
           <Switch>
@@ -66,14 +64,14 @@ const App = (props) => {
 
                 <AuthRoute exact authenticated={isLogin} path="/question_processing" render={() => <QuestionsPage qsType="processing" />} />
                 <AuthRoute exact authenticated={isLogin} path="/question_completion" render={() => <QuestionsPage qsType="completion" />} />
-                <AuthRoute exact authenticated={isLogin} path="/report_board" component={ReportPage} />
+                <AuthRoute exact authenticated={isLogin} path="/report_board"  render={() => <ReportPage qsType="board" />} />
+                <AuthRoute exact authenticated={isLogin} path="/report_comment" render={() => <ReportPage qsType="comment" />} />
               </React.Suspense>
             </MainLayout>
             <Redirect to="/" />
           </Switch>
         </GAListener>
       </BrowserRouter>
-    </Provider>
   );
 
 }

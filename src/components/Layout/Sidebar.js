@@ -39,7 +39,7 @@ const navItems = [
 
 const reportContents = [
   { to: '/report_board', name: '게시글 신고', exact: false, Icon:MdAnnouncement },
-  { to: '/reportComment', name:'댓글 신고', exact: false, Icon:MdComment},
+  { to: '/report_comment', name:'댓글 신고', exact: false, Icon:MdComment},
 ]
 
 const questionContents = [

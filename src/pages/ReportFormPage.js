@@ -51,7 +51,7 @@ import {
             <FormGroup>
                   <Label for="report_detail_grade">Target Grade</Label>
                   <Input type="select" name="report_detail_grade">
-                    <option>기본</option>
+                    <option>사용 중</option>
                     <option>경고 단계</option>
                     <option>제재 단계</option>
                     <option>일시 정지</option>

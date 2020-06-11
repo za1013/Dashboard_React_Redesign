@@ -5,12 +5,12 @@ import Axios from 'axios'
 
 import ReportItem from '../components/ReportItem'
 
-const ReportPage = () => {
+const ReportPage = ({qsType}) => {
 
     const [data, setData] = useState([])
 
     useEffect(() => {
-        Axios.get("/api/report/board").then((res) => {
+        Axios.get("/api/report/"+qsType).then((res) => {
             setData(res.data)
         }).catch((err) => {
             console.error(err)
@@ -20,7 +20,7 @@ const ReportPage = () => {
     return (
         <Page
             title="신고처리"
-            type="게시판"
+            type={qsType==="board" ? "게시판" : "댓글"}
             className="ReportPage">
             <Row className="table_style">
                 <Table>

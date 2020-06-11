@@ -1,0 +1,45 @@
+.table_test:hover {
+    background-color:rgba(0, 0, 0, 0.1);
+    transition:all .7s;
+}
+
+.table_test {
+    cursor:pointer;
+}
+
+.table_test  th {
+    font-weight:500;
+}
+
+.table_style {
+    margin:0;
+    padding:0 15px;
+}
+
+.table_head {
+    transition:all ease-in-out .7s;
+    cursor:pointer;
+}
+
+.modal-form {
+    min-height:0;
+}
+
+.m-r-10 {
+    margin-right:10px;
+}
+
+.announcement-body {
+    padding: 0;
+}
+
+.announcement-media {
+    transition:background .7s;
+    padding:.75rem 1.25rem;
+    padding-bottom:0;
+    cursor:pointer;
+}
+
+.announcement-media.active {
+    background:#ffdde1;
+}

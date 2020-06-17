@@ -1,7 +1,7 @@
 import Page from '../components/Page'
 import React, {useEffect, useState} from 'react'
 import { Row, Table} from 'reactstrap'
-import Axios from 'axios'
+import {reportBoard, reportComment } from '../lib/api/page'
 
 import ReportItem from '../components/ReportItem'
 
@@ -10,7 +10,10 @@ const ReportPage = ({qsType}) => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        Axios.get("/api/report/"+qsType).then((res) => {
+
+        const server = qsType === "board" ? reportBoard : reportComment
+
+        server.then((res) => {
             setData(res.data)
         }).catch((err) => {
             console.error(err)

@@ -1,7 +1,7 @@
 import Page from 'components/Page';
 import React, {useEffect, useState} from 'react';
 import { Row, Table } from 'reactstrap';
-import Axios from 'axios';
+import {questionProcessing, questionCompletion} from '../lib/api/page'
 
 import Table_Item from '../components/Table_Item'
 
@@ -10,7 +10,10 @@ const TablePage = ({qsType}) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    Axios.get("/api/question/"+qsType)
+    
+    const server = qsType === "processing" ? questionProcessing : questionCompletion
+
+    server
     .then((res) => {
       setData(res.data)
     })
